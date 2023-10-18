@@ -1,0 +1,15 @@
+.main-div mat-card{
+    padding: 0px;
+ 
+}
+.login-form{
+padding: 0px;
+
+}
+.M-div{
+    background-color: skyblue;
+    height: -webkit-fill-available;
+}
+.card{
+max-height: fit-content;
+}
