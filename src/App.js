@@ -5,32 +5,21 @@ import Home from './pages/home/Home'
 import User from './pages/users/Users'
 import Login from './pages/Login'
 import Header from './Components/Header';
-
+import SideBar from './Components/sideBar'
 function App() {
   return (
     <Router>
-      <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/About">About</Link>
-            </li>
-            <li>
-              <Link to="/User">User</Link>
-            </li>
-          </ul>
-        </nav> */}
-        <Header/>
-        <Routes>
+
+      <Header />
+      {/* <SideBar/> */}
+      <Routes>
+       
         <Route path="/" element={<Login />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/User" element={<User />} />
-        </Routes>
-      </div>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/User" element={<User />} />
+      </Routes>
+
     </Router>
   );
 }

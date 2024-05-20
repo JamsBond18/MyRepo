@@ -11,15 +11,15 @@ const Login = () => {
     return (
         <>
             <form >
-                <div class="imgcontainer">
-                    <img src={pngegg} alt="Avatar" class="avatar" />
+                <div className="imgcontainer">
+                    <img src={pngegg} alt="Avatar" className="avatar" />
                 </div>
 
-                <div class="container">
-                    <label for="uname"><b>Username</b></label>
+                <div className="container">
+                    <label htmlFor="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" name="uname" required />
 
-                    <label for="psw"><b>Password</b></label>
+                    <label htmlFor="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required />
 
                     <button  onClick={() => nextPath()}>Login</button>
@@ -28,9 +28,9 @@ const Login = () => {
                     </label>
                 </div>
 
-                <div class="container" style={{ 'background-color': '#f1f1f1' }}>
-                    <button type="button" class="cancelbtn">Cancel</button>
-                    <span class="psw">Forgot <a href="#">password?</a></span>
+                <div className="container" style={{ 'backgroundColor': '#f1f1f1' }}>
+                    <button type="button" className="cancelbtn">Cancel</button>
+                    <span className="psw">Forgot <a href="#">password?</a></span>
                 </div>
             </form>
 

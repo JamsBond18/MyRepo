@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./user.css";
-
+import Model from "../../Components/Model";
 const User = () => {
   const [empName, setEmpName] = useState("");
   const [salary, setSalary] = useState("");
   const [contact, setContact] = useState("");
   const [inputarr, setinputarr] = useState([]);
   const [updateInputArr, setUpdateInputArr] = useState({});
-  const [openModel, setOpenModel] = useState('false');
+  const [openModel, setOpenModel] = useState(false);
   const [searchItem, setSearchItem] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
 
@@ -30,6 +30,8 @@ const User = () => {
       salary,
       contact,
       isAvilable: false,
+      handleOpen: false,
+
     };
     if (empName !== "") {
       setinputarr([...inputarr, employeeInfo]);
@@ -86,12 +88,12 @@ const User = () => {
     }
   };
 
-  // const handleOpen = (data) => {
-  //   debugger;
-  //   setOpenModel(true);
-  //   console.log(openModel);
+  const handleOpen = (data) => {
+    debugger;
+    setOpenModel(data);
+    console.log(openModel);
 
-  // };
+  };
 
   const handleSearchBox = (event) => {
     setSearchItem(event.target.value);
@@ -106,10 +108,14 @@ const User = () => {
       setinputarr([...inputarr]);
     }
   };
-
+  const myEmpData = {
+    empName,
+    
+}
   return (
     <>
-      <div className="table-responsive">
+    
+      <div >
         <div>
           <label>
             <b>Search</b>
@@ -162,7 +168,7 @@ const User = () => {
           <option value="desc">Desc</option>
         </select>
         <br />
-        <table className="table table-hover">
+        <table className="table table-hover ">
           <tr>
             <th>Id</th>
             <th>Employee Name</th>
@@ -205,7 +211,7 @@ const User = () => {
                       <button
                         type="button"
                         id="open"
-                      // onClick={handleOpen(obj)}
+                        onClick={(e) => handleOpen(true)}
                       >
                         {" "}
                         Open
@@ -247,7 +253,7 @@ const User = () => {
                       <button
                         type="button"
                         id="open"
-                      // onClick={(e) => handleOpen(obj)}
+                        onClick={(e) => handleOpen(true)}
                       >
                         {" "}
                         Open
@@ -260,15 +266,14 @@ const User = () => {
           </tbody>
         </table>
 
-        {/* <!-- The Modal --> */}
-        <div id="myModal" className="modal" show={openModel}>
+      
+       
+        <Model show={openModel} handleToggle={handleOpen} empData={myEmpData} />
+            {/* <div>
+                check
+            </div> */}
 
-          {/* <!-- Modal content --> */}
-          <div className="modal-content">
-            <span className="close">&times;</span>
-            <p>Some text in the Modal..</p>
-          </div>
-        </div>
+     
       </div>
     </>
   );
